@@ -1,8 +1,10 @@
-import anyio
 import os
+
+import anyio
 from dotenv import load_dotenv
-from hypercorn.config import Config
 from hypercorn.asyncio import serve
+from hypercorn.config import Config
+
 from main import (
     app,
 )
