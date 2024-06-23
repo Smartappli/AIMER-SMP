@@ -9,7 +9,7 @@ class UnetParams(BaseModel):
     encoder_name: str = "resnet34"
     encoder_depth: int = 5
     encoder_weights: str | None = "imagenet"
-    decoder_channels: Optional(List[int]) = None
+    decoder_channels: List[int] = (256, 128, 64, 32, 16) # same size than encoder_depth
     decoder_use_batchnorm: bool = True
     decoder_attention_type: str | None = None
     in_channels: int = 3
@@ -22,6 +22,6 @@ class UnetPlusPlusParams(BaseModel):
     encoder_name: str = "resnet34"
     encoder_depth: int = 5
     encoder_weights: str | None = "imagenet"
-    decoder_channels: Optional(List[int]) = None
-    
+    decoder_channels: List[int] = (256, 128, 64, 32, 16) # same size than encoder_depth
+    decoder_use_batchnorm: bool = True
     
