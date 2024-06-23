@@ -9,14 +9,24 @@ app = FastAPI()
 
 
 class Encoder(str, Enum):
-    SelecSls42 = "SelecSls42"
-    SelecSls42b = "SelecSls42b"
-    SelecSls60 = "SelecSls60"
-    SelecSls60b = "SelecSls60b"
-    SelecSls84 = "SelecSls84"
+    selecsls42 = "SelecSls42"
+    selecsls42b = "SelecSls42b"
+    selecsls60 = "SelecSls60"
+    selecsls60b = "SelecSls60b"
+    selecsls84 = "SelecSls84"
     bat_resnext26ts = "bat_resnext26ts"
     botnet26t_256 = "botnet26t_256"
     botnet50ts_256 = "botnet50ts_256"
+    coatnet_0_224 = "coatnet_0_224"
+    coatnet_0_rw_224 = "coatnet_0_rw_224"
+    coatnet_1_224 = "coatnet_1_224"
+    coatnet_1_rw_224 = "coatnet_1_rw_224"
+    coatnet_2_224 = "coatnet_2_224"
+    coatnet_2_rw_224 = "coatnet_2_rw_224"
+    coatnet_3_224 = "coatnet_3_224"
+    coatnet_3_rw_224 = "coatnet_3_rw_224"
+    coatnet_4_224 = "coatnet_4_224"
+    coatnet_5_224 = "coatnet_5_224"
     resnet34 = "resnet34"
 
     
