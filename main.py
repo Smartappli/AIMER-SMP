@@ -2,9 +2,38 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import Optional, Union, Callable, Dict, List, Any
 
+import segmentation_models_pytorch as smp
+
+
 app = FastAPI()
 
 
+class DeepLabV3Params(BaseModel):
+    encoder_name: str = "resnet34"
+    encoder_depth: int = 5
+    encoder_weights: str | None = "imagenet"
+    decoder_channels: int = 256
+    in_channels: int = 3
+    classes: int = 1
+    activation: str | None = None
+    upsampling: int = 8
+    aux_params: dict | None = None
+
+
+class DeepLabV3PlusParams(BaseModel):
+    encoder_name: str = "resnet34"
+    encoder_depth: int = 5
+    encoder_weights: str | None = "imagenet"
+    encoder_output_stride: int = 16
+    decoder_channels: int = 256
+    decoder_atrous_rates: tuple = (12, 24, 36)
+    in_channels: int = 3
+    classes: int = 1
+    activation: str | None = None
+    upsampling: int = 4
+    aux_params: dict | None = None
+
+    
 class UnetParams(BaseModel):
     encoder_name: str = "resnet34"
     encoder_depth: int = 5
@@ -59,7 +88,7 @@ class MAnetParams(BaseModel):
     aux_params: dict | None = None
 
 
-class PamParams(BaseModel):
+class PanParams(BaseModel):
     encoder_name: str = "resnet34"
     encoder_weights: str | None = "imagenet"
     encoder_output_stride: int = 16
@@ -69,3 +98,23 @@ class PamParams(BaseModel):
     activation: str | callable | None = None
     upsampling: int = 4
     aux_params: dict | None = None
+
+
+class PspNetParams(BaseModel):
+    encoder_name: str = "resnet34"
+    encoder_depth: int = 5
+    encoder_weights: str | None = "imagenet"
+    psp_out_channels: int = 512
+    psp_use_batchnor: bool = True
+    psp_dropout: float = 0.2
+    in_channels: int = 3
+    classes: int = 1
+    activation: str | callable | None = None
+    upsampling: int = 4
+    aux_params: dict | None = None
+
+
+@app.get("/")
+async def root():
+    return {"pycaret_version": smp.__version__}
+
