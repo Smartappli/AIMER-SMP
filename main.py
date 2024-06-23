@@ -34,32 +34,6 @@ class DeepLabV3PlusParams(BaseModel):
     aux_params: dict | None = None
 
     
-class UnetParams(BaseModel):
-    encoder_name: str = "resnet34"
-    encoder_depth: int = 5
-    encoder_weights: str | None = "imagenet"
-    decoder_channels: List[int] = (256, 128, 64, 32, 16) # same size than encoder_depth
-    decoder_use_batchnorm: bool = True
-    decoder_attention_type: str | None = None
-    in_channels: int = 3
-    classes: int = 1
-    activation: str | callable | None = None
-    aux_params: dict | None = None
-
-
-class UnetPlusPlusParams(BaseModel):
-    encoder_name: str = "resnet34"
-    encoder_depth: int = 5
-    encoder_weights: str | None = "imagenet"
-    decoder_channels: List[int] = (256, 128, 64, 32, 16) # same size than encoder_depth
-    decoder_use_batchnorm: bool = True
-    decoder_attention_type: str | None = None
-    in_channels: int = 3
-    classes: int = 1
-    activation: str | callable | None = None
-    aux_params: dict | None = None
-
-
 class FpnParams(BaseModel):
     encoder_name: str = "resnet34"
     encoder_depth: int = 5
@@ -111,6 +85,32 @@ class PspNetParams(BaseModel):
     classes: int = 1
     activation: str | callable | None = None
     upsampling: int = 4
+    aux_params: dict | None = None
+
+
+class UnetParams(BaseModel):
+    encoder_name: str = "resnet34"
+    encoder_depth: int = 5
+    encoder_weights: str | None = "imagenet"
+    decoder_channels: List[int] = (256, 128, 64, 32, 16) # same size than encoder_depth
+    decoder_use_batchnorm: bool = True
+    decoder_attention_type: str | None = None
+    in_channels: int = 3
+    classes: int = 1
+    activation: str | callable | None = None
+    aux_params: dict | None = None
+
+
+class UnetPlusPlusParams(BaseModel):
+    encoder_name: str = "resnet34"
+    encoder_depth: int = 5
+    encoder_weights: str | None = "imagenet"
+    decoder_channels: List[int] = (256, 128, 64, 32, 16) # same size than encoder_depth
+    decoder_use_batchnorm: bool = True
+    decoder_attention_type: str | None = None
+    in_channels: int = 3
+    classes: int = 1
+    activation: str | callable | None = None
     aux_params: dict | None = None
 
 
