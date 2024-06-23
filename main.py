@@ -398,7 +398,31 @@ class Encoder(str, Enum):
     resnet32ts = "resnet32ts"
     resnet33ts = "resnet33ts"
     resnet34 = "resnet34"
-    
+    resnet34d = "resnet34d"
+    resnet50 = "resnet50"
+    resnet50_gn = "resnet50_gn"
+    resnet50c = "resnet50c"
+    resnet50d = "resnet50d"
+    resnet50s = "resnet50s"
+    resnet50t = "resnet50t"
+    resnet51q = "resnet51q"
+    resnet61q = "resnet61q"
+    resnetaa101d = "resnetaa101d"
+    resnetaa34d = "resnetaa34d"
+    resnetaa50 = "resnetaa50"
+    resnetaa50d = "resnetaa50d"
+    resnetblur101d = "resnetblur101d"
+    resnetblur18 = "resnetblur18"
+    resnetblur50 = "resnetblur50"
+    resnetblur50d = "resnetblur50d"
+    resnetrs101 = "resnetrs101"
+    resnetrs152 = "resnetrs152"
+    resnetrs200 = "resnetrs200"
+    resnetrs270 = "resnetrs270"
+    resnetrs350 = "resnetrs350"
+    resnetrs420 = "resnetrs420"
+    resnetrs50 = "resnetrs50"
+
     
     class DeepLabV3Params(BaseModel):
     encoder_name: str = Encoder.resnet34
