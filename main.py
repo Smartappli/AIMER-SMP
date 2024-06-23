@@ -8,8 +8,20 @@ import segmentation_models_pytorch as smp
 app = FastAPI()
 
 
+class Encoder(str, Enum):
+    SelecSls42 = "SelecSls42"
+    SelecSls42b = "SelecSls42b"
+    SelecSls60 = "SelecSls60"
+    SelecSls60b = "SelecSls60b"
+    SelecSls84 = "SelecSls84"
+    bat_resnext26ts = "bat_resnext26ts"
+    botnet26t_256 = "botnet26t_256"
+    botnet50ts_256 = "botnet50ts_256"
+    resnet34 = "resnet34"
+
+    
 class DeepLabV3Params(BaseModel):
-    encoder_name: str = "resnet34"
+    encoder_name: str = Encoder.resnet34
     encoder_depth: int = 5
     encoder_weights: str | None = "imagenet"
     decoder_channels: int = 256
@@ -21,7 +33,7 @@ class DeepLabV3Params(BaseModel):
 
 
 class DeepLabV3PlusParams(BaseModel):
-    encoder_name: str = "resnet34"
+    encoder_name: str = Encoder.resnet34
     encoder_depth: int = 5
     encoder_weights: str | None = "imagenet"
     encoder_output_stride: int = 16
@@ -35,7 +47,7 @@ class DeepLabV3PlusParams(BaseModel):
 
     
 class FpnParams(BaseModel):
-    encoder_name: str = "resnet34"
+    encoder_name: str = Encoder.resnet34
     encoder_depth: int = 5
     encoder_weights: str | None = "imagenet"
     decoder_pyramid_channels: int = 256
@@ -50,7 +62,7 @@ class FpnParams(BaseModel):
 
 
 class MAnetParams(BaseModel):
-    encoder_name=: str = "resnet34"
+    encoder_name=: str = Encoder.resnet34
     encoder_depth: int = 5
     encoder_weights str | None = "imagenet"
     decoder_use_batchnorm: bool = True
@@ -63,7 +75,7 @@ class MAnetParams(BaseModel):
 
 
 class PanParams(BaseModel):
-    encoder_name: str = "resnet34"
+    encoder_name: str = Encoder.resnet34
     encoder_weights: str | None = "imagenet"
     encoder_output_stride: int = 16
     decoder_channels: int = 32
@@ -75,7 +87,7 @@ class PanParams(BaseModel):
 
 
 class PspNetParams(BaseModel):
-    encoder_name: str = "resnet34"
+    encoder_name: str = Encoder.resnet34
     encoder_depth: int = 5
     encoder_weights: str | None = "imagenet"
     psp_out_channels: int = 512
@@ -89,7 +101,7 @@ class PspNetParams(BaseModel):
 
 
 class UnetParams(BaseModel):
-    encoder_name: str = "resnet34"
+    encoder_name: str = Encoder.resnet34
     encoder_depth: int = 5
     encoder_weights: str | None = "imagenet"
     decoder_channels: List[int] = (256, 128, 64, 32, 16) # same size than encoder_depth
@@ -102,7 +114,7 @@ class UnetParams(BaseModel):
 
 
 class UnetPlusPlusParams(BaseModel):
-    encoder_name: str = "resnet34"
+    encoder_name: str = Encoder.resnet34
     encoder_depth: int = 5
     encoder_weights: str | None = "imagenet"
     decoder_channels: List[int] = (256, 128, 64, 32, 16) # same size than encoder_depth
