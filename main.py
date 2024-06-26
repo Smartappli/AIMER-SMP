@@ -541,7 +541,7 @@ class Encoder(str, Enum):
     xception41p = "xception41p"
     xception65 = "xception65"
     xception65p = "xception65p"
-    xception71 = "xception71"  
+    xception71 = "xception71"
 
 
     class DeepLabV3Params(BaseModel):
@@ -569,7 +569,7 @@ class DeepLabV3PlusParams(BaseModel):
     upsampling: int = 4
     aux_params: dict | None = None
 
-    
+
 class FpnParams(BaseModel):
     encoder_name: str = Encoder.resnet34
     encoder_depth: int = 5
