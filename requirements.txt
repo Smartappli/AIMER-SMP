@@ -1,1 +1,2 @@
 git+https://github.com/qubvel/segmentation_models.pytorch
+anyio==4.4.0
