@@ -545,7 +545,7 @@ class Encoder(str, Enum):
 
 
     class DeepLabV3Params(BaseModel):
-    encoder_name: str = Encoder.resnet34
+    encoder_name: str = Encoder.resnet34.value
     encoder_depth: int = 5
     encoder_weights: str | None = "imagenet"
     decoder_channels: int = 256
@@ -557,7 +557,7 @@ class Encoder(str, Enum):
 
 
 class DeepLabV3PlusParams(BaseModel):
-    encoder_name: str = Encoder.resnet34
+    encoder_name: str = Encoder.resnet34.value
     encoder_depth: int = 5
     encoder_weights: str | None = "imagenet"
     encoder_output_stride: int = 16
@@ -571,7 +571,7 @@ class DeepLabV3PlusParams(BaseModel):
 
 
 class FpnParams(BaseModel):
-    encoder_name: str = Encoder.resnet34
+    encoder_name: str = Encoder.resnet34.value
     encoder_depth: int = 5
     encoder_weights: str | None = "imagenet"
     decoder_pyramid_channels: int = 256
@@ -586,7 +586,7 @@ class FpnParams(BaseModel):
 
 
 class MAnetParams(BaseModel):
-    encoder_name=: str = Encoder.resnet34
+    encoder_name=: str = Encoder.resnet34.value
     encoder_depth: int = 5
     encoder_weights str | None = "imagenet"
     decoder_use_batchnorm: bool = True
@@ -599,7 +599,7 @@ class MAnetParams(BaseModel):
 
 
 class PanParams(BaseModel):
-    encoder_name: str = Encoder.resnet34
+    encoder_name: str = Encoder.resnet34.value
     encoder_weights: str | None = "imagenet"
     encoder_output_stride: int = 16
     decoder_channels: int = 32
@@ -611,7 +611,7 @@ class PanParams(BaseModel):
 
 
 class PspNetParams(BaseModel):
-    encoder_name: str = Encoder.resnet34
+    encoder_name: str = Encoder.resnet34.value
     encoder_depth: int = 5
     encoder_weights: str | None = "imagenet"
     psp_out_channels: int = 512
@@ -625,7 +625,7 @@ class PspNetParams(BaseModel):
 
 
 class UnetParams(BaseModel):
-    encoder_name: str = Encoder.resnet34
+    encoder_name: str = Encoder.resnet34.value
     encoder_depth: int = 5
     encoder_weights: str | None = "imagenet"
     decoder_channels: List[int] = (256, 128, 64, 32, 16) # same size than encoder_depth
@@ -638,7 +638,7 @@ class UnetParams(BaseModel):
 
 
 class UnetPlusPlusParams(BaseModel):
-    encoder_name: str = Encoder.resnet34
+    encoder_name: str = Encoder.resnet34.value
     encoder_depth: int = 5
     encoder_weights: str | None = "imagenet"
     decoder_channels: List[int] = (256, 128, 64, 32, 16) # same size than encoder_depth
