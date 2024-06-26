@@ -586,7 +586,7 @@ class FpnParams(BaseModel):
 
 
 class MAnetParams(BaseModel):
-    encoder_name=: str = Encoder.resnet34.value
+    encoder_name: str = Encoder.resnet34.value
     encoder_depth: int = 5
     encoder_weights str | None = "imagenet"
     decoder_use_batchnorm: bool = True
