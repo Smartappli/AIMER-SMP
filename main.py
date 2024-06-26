@@ -592,8 +592,8 @@ class MAnetParams(BaseModel):
     decoder_use_batchnorm: bool = True
     decoder_channels: List[int] = (256, 128, 64, 32, 16)
     decoder_pab_channels: int = 64
-    in_channels=3
-    classes=1
+    in_channels = 3
+    classes = 1
     activation: str | callable | None = None
     aux_params: dict | None = None
 
@@ -628,7 +628,13 @@ class UnetParams(BaseModel):
     encoder_name: str = Encoder.resnet34.value
     encoder_depth: int = 5
     encoder_weights: str | None = "imagenet"
-    decoder_channels: List[int] = (256, 128, 64, 32, 16) # same size than encoder_depth
+    decoder_channels: List[int] = (
+        256,
+        128,
+        64,
+        32,
+        16,
+    )  # same size than encoder_depth
     decoder_use_batchnorm: bool = True
     decoder_attention_type: str | None = None
     in_channels: int = 3
@@ -641,7 +647,13 @@ class UnetPlusPlusParams(BaseModel):
     encoder_name: str = Encoder.resnet34.value
     encoder_depth: int = 5
     encoder_weights: str | None = "imagenet"
-    decoder_channels: List[int] = (256, 128, 64, 32, 16) # same size than encoder_depth
+    decoder_channels: List[int] = (
+        256,
+        128,
+        64,
+        32,
+        16,
+    )  # same size than encoder_depth
     decoder_use_batchnorm: bool = True
     decoder_attention_type: str | None = None
     in_channels: int = 3
@@ -653,4 +665,3 @@ class UnetPlusPlusParams(BaseModel):
 @app.get("/")
 async def root():
     return {"pycaret_version": smp.__version__}
-
