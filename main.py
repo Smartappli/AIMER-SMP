@@ -544,7 +544,7 @@ class Encoder(str, Enum):
     xception71 = "xception71"
 
 
-    class DeepLabV3Params(BaseModel):
+class DeepLabV3Params(BaseModel):
     encoder_name: str = Encoder.resnet34.value
     encoder_depth: int = 5
     encoder_weights: str | None = "imagenet"
