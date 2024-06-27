@@ -1,8 +1,8 @@
+from typing import List
+ 
+import segmentation_models_pytorch as smp
 from fastapi import FastAPI
 from pydantic import BaseModel
-from typing import Optional, Union, Callable, Dict, List, Any
-
-import segmentation_models_pytorch as smp
 
 
 app = FastAPI()
