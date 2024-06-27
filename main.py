@@ -1,9 +1,8 @@
 from typing import List
- 
+
 import segmentation_models_pytorch as smp
 from fastapi import FastAPI
 from pydantic import BaseModel
-
 
 app = FastAPI()
 
