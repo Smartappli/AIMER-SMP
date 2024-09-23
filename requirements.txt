@@ -1,4 +1,4 @@
 git+https://github.com/qubvel/segmentation_models.pytorch
-anyio==4.4.0
+anyio==4.6.0
 hypercorn==0.17.3
 fastapi==0.112.2
